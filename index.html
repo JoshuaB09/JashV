@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JASHV Construction & Supply</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Add any additional inline styles here if needed */
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="header-top">
+      <img src="L.png" alt="JASHV Logo" class="logo" />
+      <h1 class="site-title">
+        <span style="color: red; font-weight: bold;">JASHV</span>
+      </h1>
+      <h1>Construction & Supply</h1>
+    </div>
+    <!-- Navigation Menu -->
+<!-- Header Navigation -->
+<nav aria-label="Main Navigation">
+  <a style="font-size: 150%;" href="#home">Home</a>
+  <a style="font-size: 150%;" href="#services">Services</a>
+  <a style="font-size: 150%;" href="#store">Store</a>
+  <a style="font-size: 150%;" href="#gallery-highlights">Highlights</a>
+  <a style="font-size: 150%;" href="#about">About Us</a>
+  <a style="font-size: 150%;" href="#contact">Contact</a>
+</nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="fade-in-text">
+      <h2>Your Trusted Construction Partner</h2>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section" id="services">
+    <div class="services-wrapper">
+      <h2 style="text-align: center;">Our Services</h2>
+      <div class="services-container" id="services-container">
+        <!-- Construction Service -->
+        <div class="service construction">
+          <h3 style="text-align:center; font-size: 2rem;">Construction</h3>
+          <ul>
+            <li class="shadow-effect" style="font-size: 24px;"> Building Construction</li>
+            <li class="shadow-effect" style="font-size: 24px;"> Road Opening/Concreting</li>
+            <li class="shadow-effect" style="font-size: 24px;"> Overhead Tank Construction</li>
+            <li class="shadow-effect" style="font-size: 24px;"> Slope Protection</li>
+            <li class="shadow-effect" style="font-size: 24px;"> Retaining Wall</li>
+            <li class="shadow-effect" style="font-size: 24px;"> Gabion</li>
+            <li class="shadow-effect" style="font-size: 24px;"> Riprap</li>
+            <li class="shadow-effect" style="font-size: 24px;"> Water System</li>
+            <li class="shadow-effect" style="font-size: 24px;"> Water Drilling</li>
+          </ul>
+        </div>
+        <!-- Supply of Materials Service -->
+        <div class="service materials">
+          <h3 style="text-align:center; font-size: 2rem;">Supply of Materials</h3>
+          <p class="shadow-effect" style="text-align:center; font-size: 24px;">Providing high-quality water construction materials including power tools,</p> 
+          <p class="shadow-effect" style="text-align:center; font-size: 24px;">pipes & Fittings, and Pump Specialist.</p>
+        </div>
+        <!-- Installations Service -->
+        <div class="service installations">
+          <h3 style="text-align:center; font-size: 2rem;">Installations</h3>
+          <ul>
+            <li class="shadow-effect" style="font-size: 24px;">Electrical & Electro Mechanical Supplies</li>
+            <li class="shadow-effect" style="font-size: 24px;">Electrical Installations & Audits</li>
+            <li class="shadow-effect" style="font-size: 24px;">Solar Installations</li>
+          </ul>
+        </div>
+      </div>
+      <button class="scroll-arrow right" aria-label="Scroll Right">→</button>
+    </div>
+  </section>
+
+  <script>
+    const container = document.getElementById('services-container');
+    const btnLeft = document.querySelector('.scroll-arrow.left');
+    const btnRight = document.querySelector('.scroll-arrow.right');
+
+    const scrollAmount = 300; // Adjust as needed
+
+    btnLeft.addEventListener('click', () => {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  </script> 
+
+  <!-- Store Section -->
+  <section class="section" id="store">
+    <h2>Our Store</h2>
+    <div class="store-grid"></div>
+  </section>
+
+  <!-- Highlights Section -->
+<h1 style="text-align: center;">Highlights</h1>
+<section id="gallery-highlights" style="background-color: #ffffff; ">
+  <div class="highlights-grid">
+    <!-- Highlight Item: BUNGRO -->
+    <div class="Bungro">
+      <div class="highlight-caption">BUNGRO</div>
+    </div>
+    
+    <!-- Highlight Item: ABOITIZ - PV SINAG -->
+    <div class="ABOITIZ-PV-SINAG">
+      <div class="highlight-caption">ABOITIZ - PV SINAG</div>
+    </div>
+    
+    <!-- Highlight Item: BAGUIO GENERAL HOSPITAL -->
+    <div class="BGH">
+      <div class="highlight-caption">BAGUIO GENERAL HOSPITAL</div>
+    </div>
+    
+    <!-- Highlight Item: CERVANTES -->
+    <div class="CERVANTES">
+      <div class="highlight-caption">CERVANTES</div>
+    </div>
+    
+    <!-- Highlight Item: LEGARDA -->
+    <div class="LEGARDA">
+      <div class="highlight-caption">LEGARDA</div>
+    </div>
+    
+    <!-- Highlight Item: PACDAL -->
+    <div class="PACDAL">
+      <div class="highlight-caption">PACDAL</div>
+    </div>
+    
+    <!-- Highlight Item: PINSAO PILOT -->
+    <div class="PINSAO-PILOT">
+      <div class="highlight-caption">PINSAO PILOT</div>
+    </div>
+    
+    <!-- Highlight Item: RICHWOOD -->
+    <div class="RICHWOOD">
+      <div class="highlight-caption">RICHWOOD</div>
+    </div>
+    
+    <!-- Highlight Item: SHANGRILA -->
+    <div class="SHANGRILA">
+      <div class="highlight-caption">SHANGRILA</div>
+    </div>
+    
+    <!-- Highlight Item: WALLACE -->
+    <div class="WALLACE">
+      <div class="highlight-caption">WALLACE</div>
+    </div>
+    
+    <!-- Highlight Item: STA. MARIA EAST DRILLING -->
+    <div class="SMED">
+      <div class="highlight-caption">STA. MARIA EAST DRILLING</div>
+    </div>
+    
+    <!-- Highlight Item: STA. MARIA EAST PIPELAYING -->
+    <div class="SMEP">
+      <div class="highlight-caption">STA. MARIA EAST PIPELAYING</div>
+    </div>
+  </div>
+</section>
+  <script>
+    // Data for store, equipment, and highlights
+    const storeImages = [
+      {
+        src: 'p.png',
+        title: 'Power Tools',
+        description: 'High-quality Power tools for all your construction needs.'
+      },
+      {
+        src: 'PF.jpg',
+        title: 'PPR Pipes & Fittings',
+        description: 'PPR pipes are widely used for hot and cold water supply systems.'
+      },
+      {
+        src: 'PS.png',
+        title: 'Pump Specialist',
+        description: 'Use of specific materials for pump construction based on application.'
+      }
+    ];
+
+    const equipmentImages = [
+      {
+        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/SNR600.jpg',
+        title: 'Water Well Drilling Machines',
+        description: 'Rig Model FY-350EE with advanced features for efficient drilling.'
+      },
+      {
+        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/A.jpg',
+        title: 'Air Compressor',
+        description: '900 CFM / 425 Psi Cat Engine Ingersoll Rand.'
+      },
+      {
+        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/p.jpg',
+        title: 'Mud & Grouting Pumps',
+        description: 'High capacity pumps with various specifications for different needs.'
+      },
+      {
+        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/megapowe-24-60kw.jpg',
+        title: 'Generator Set',
+        description: 'Diesel generator with 25KVA, soundproof, 3-phase, Yanmar engine.'
+      },
+      {
+        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/e.jpg',
+        title: 'Excavator',
+        description: 'Models include Hitachi EX60, Kobelco Beetle, 30SR, EX27.'
+      }
+    ];
+
+    const highlightImages = [
+      {
+        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/power%20tools.png',
+        title: 'Power Tools',
+        description: 'High-quality Power tools for all your construction needs.'
+      },
+      {
+        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/pipes.jpg',
+        title: 'PPR Pipes & Fittings',
+        description: 'PPR pipes are widely used for hot and cold water supply systems.'
+      },
+      {
+        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/Pump.png',
+        title: 'Pump Specialist',
+        description: 'Use of specific materials for pump construction based on application.'
+      }
+    ];
+
+    // Populate sections after DOM loads
+    document.addEventListener('DOMContentLoaded', () => {
+      function populateSection(sectionId, images, isStoreOrEquip = true) {
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+        const container = section.querySelector('.store-grid') || section.querySelector('.gallery-grid');
+        if (!container) return;
+
+        images.forEach((img, index) => {
+          const div = document.createElement('div');
+          div.className = isStoreOrEquip ? 'product' : 'gallery-item';
+
+          const image = document.createElement('img');
+          image.src = img.src;
+          image.alt = img.title || `Image ${index + 1}`;
+
+          if (isStoreOrEquip) {
+            const captionTitle = document.createElement('h4');
+            captionTitle.textContent = img.title;
+            const captionDesc = document.createElement('p');
+            captionDesc.textContent = img.description;
+            div.appendChild(image);
+            div.appendChild(captionTitle);
+            div.appendChild(captionDesc);
+          } else {
+            div.appendChild(image);
+          }
+
+          container.appendChild(div);
+        });
+      }
+
+      // Call populate for each section
+      populateSection('store', storeImages, true);
+      populateSection('major-equipments', equipmentImages, true);
+      populateSection('gallery-highlights', highlightImages, false);
+    });
+  </script>
+
+  <!-- About Us Section -->
+  <section class="sectionA" id="about">
+    <h2>About Us</h2>
+    <p style="font-size: 150%; max-width:800px; margin:auto;">
+      Design, Supply, Installations/Construction Services, Water Well Drilling, Water System Operation & Maintenance.
+    </p>
+    <h4 style="font-size: 150%; margin-top:20px;">Vision</h4>
+    <p style="font-size: 150%; max-width:800px; margin:auto;">
+      To be among the best service providers in the field of General Engineering in the construction industry through innovative solutions.
+    </p>
+    <h4 style="font-size: 150%; margin-top:20px;">Mission</h4>
+    <p style="font-size: 150%; max-width:800px; margin:auto;">
+      To provide quality, satisfactory services fulfilling customers' expectations.
+    </p>
+  </section>
+
+  <!-- Organizational Chart -->
+  <section style="text-align:center; padding:50px 20px;">
+    <h1>Organizational Chart</h1>
+    <img src="O.png" alt="Organizational Chart" style="max-width:100%; height:auto; border-radius:8px;" />
+  </section>
+
+  <!-- Contact Us -->
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p style="font-size: 130%; max-width:1000px; margin:auto; text-align:center;">
+      Email: jashvsfc@gmail.com / jashv2011@gmail.com | Phone: 0918-2134136 / 0927-5182421 | Address: Pennsylvania Ave., Parian, City of San Fernando, La Union
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2013 JASHV Construction & Supply. All rights reserved.</p>
+    <p><a href="https://www.facebook.com/share/1DSYE9gdxv/" target="_blank">Facebook Page</a></p>
+  </footer>
+</body>
+</html>

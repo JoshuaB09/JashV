@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style2.css" />
+  <title>Login/Register Forms</title>
+</head>
+<body>
+  <div class="login-box" id="form-container">
+    <!-- Login Form -->
+    <div id="login-form" style="display: block;">
+      <h2>Login</h2>
+      <form id="loginForm" autocomplete="off">
+        <div class="error-message" id="login-error"></div>
+        <div class="user-box">
+          <input type="email" id="loginEmail" required placeholder=" " />
+          <label for="loginEmail">Email</label>
+        </div>
+        <div class="user-box" style="position: relative;">
+          <input type="password" id="loginPassword" required placeholder=" " />
+          <label for="loginPassword">Password</label>
+          <span class="toggle-password" data-target="loginPassword">Show</span>
+        </div>
+        <div>
+          <label><input type="checkbox" id="rememberMe" /> Remember Me</label>
+        </div>
+        <button type="submit" id="loginBtn">Login</button>
+      </form>
+      <div class="toggle-text">
+        Don't have an account? <span class="toggle-link" id="show-register">Register here</span>
+      </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="register-form" style="display: none;">
+      <h2>Register</h2>
+      <form id="registerForm" autocomplete="off">
+        <div class="error-message" id="register-error"></div>
+        <div class="user-box">
+          <input id="register-username" type="text" required placeholder=" " />
+          <label for="register-username">Username</label>
+        </div>
+        <div class="user-box">
+          <input id="register-email" type="email" required placeholder=" " />
+          <label for="register-email">Email</label>
+        </div>
+        <div class="user-box" style="position: relative;">
+          <input id="register-password" type="password" required placeholder=" " />
+          <label for="register-password">Password</label>
+          <span class="toggle-password" data-target="register-password">Show</span>
+        </div>
+        <button type="submit" id="registerBtn">Register</button>
+      </form>
+      <div class="toggle-text">
+        Already have an account? <span class="toggle-link" id="show-login">Login</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle between login and register forms
+    document.getElementById('show-register').onclick = () => {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('register-form').style.display = 'block';
+    };
+    document.getElementById('show-login').onclick = () => {
+      document.getElementById('register-form').style.display = 'none';
+      document.getElementById('login-form').style.display = 'block';
+    };
+
+    // Toggle password visibility
+    document.querySelectorAll('.toggle-password').forEach(span => {
+      span.onclick = () => {
+        const inputId = span.dataset.target;
+        const input = document.getElementById(inputId);
+        if (input.type === 'password') {
+          input.type = 'text';
+          span.textContent = 'Hide';
+        } else {
+          input.type = 'password';
+          span.textContent = 'Show';
+        }
+      };
+    });
+
+    // Validation helpers
+    const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const isValidUsername = username => username.length >= 3 && username.length <= 15;
+
+    // Login handling
+    document.getElementById('loginForm').onsubmit = e => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value.trim();
+      const errorDiv = document.getElementById('login-error');
+      const btn = document.getElementById('loginBtn');
+
+      btn.disabled = true;
+      btn.innerHTML = '<div class="loading-spinner"></div>';
+
+      if (!email || !password) {
+        errorDiv.textContent = 'Please fill in all fields.';
+        resetButton(btn, 'Login');
+        return;
+      }
+      if (!isValidEmail(email)) {
+        errorDiv.textContent = 'Enter a valid email.';
+        resetButton(btn, 'Login');
+        return;
+      }
+
+      errorDiv.textContent = '';
+      alert('Login successful! Redirecting...');
+      window.location.href = 'index.html';
+    };
+  </script>
+  <script>
+  document.getElementById('registerForm').onsubmit = e => {
+  e.preventDefault();
+  const username = document.getElementById('register-username').value.trim();
+  const email = document.getElementById('register-email').value.trim();
+  const password = document.getElementById('register-password').value.trim();
+  const errorDiv = document.getElementById('register-error');
+  const btn = document.getElementById('registerBtn');
+
+  btn.disabled = true;
+  btn.innerHTML = '<div class="loading-spinner"></div>';
+
+  // Initialize validation status
+  let isValid = true;
+
+  // Validate all fields
+  if (!username || !email || !password) {
+    errorDiv.textContent = 'Please fill in all fields.';
+    isValid = false;
+  } else if (!isValidUsername(username)) {
+    errorDiv.textContent = 'Username must be 3-15 characters.';
+    isValid = false;
+  } else if (!isValidEmail(email)) {
+    errorDiv.textContent = 'Enter a valid email.';
+    isValid = false;
+  }
+
+  if (!isValid) {
+    resetButton(btn, 'Register');
+    return; // Exit if validation fails
+  }
+
+  // If validation passes
+  errorDiv.textContent = '';
+  alert('Registration successful!');
+  // Redirect to login page after registration
+  window.location.href = 'login.html'; // Change this to your login page URL
+  };
+</script>
+</body>
+</html>
