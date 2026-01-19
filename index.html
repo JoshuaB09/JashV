@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>JASHV Construction & Supply</title>
   <link rel="stylesheet" href="style.css" />
   <style>
@@ -12,16 +12,20 @@
 <body>
   <!-- Header Section -->
   <header>
+    <div class="parent-container">
     <div class="header-top">
+    <div class="logo-container">
       <img src="L.png" alt="JASHV Logo" class="logo" />
       <h1 class="site-title">
         <span style="color: red; font-weight: bold;">JASHV</span>
       </h1>
       <h1>Construction & Supply</h1>
     </div>
+    </div>
+    </div>
     <!-- Navigation Menu -->
 <!-- Header Navigation -->
-<nav aria-label="Main Navigation">
+<nav  aria-label="Main Navigation">
   <a style="font-size: 150%;" href="#home">Home</a>
   <a style="font-size: 150%;" href="#services">Services</a>
   <a style="font-size: 150%;" href="#store">Store</a>
@@ -40,7 +44,9 @@
 
   <!-- Services Section -->
   <section class="section" id="services">
+    <div class="services-grid">
     <div class="services-wrapper">
+      <div class="service">
       <h2 style="text-align: center;">Our Services</h2>
       <div class="services-container" id="services-container">
         <!-- Construction Service -->
@@ -61,8 +67,7 @@
         <!-- Supply of Materials Service -->
         <div class="service materials">
           <h3 style="text-align:center; font-size: 2rem;">Supply of Materials</h3>
-          <p class="shadow-effect" style="text-align:center; font-size: 24px;">Providing high-quality water construction materials including power tools,</p> 
-          <p class="shadow-effect" style="text-align:center; font-size: 24px;">pipes & Fittings, and Pump Specialist.</p>
+          <p class="shadow-effect" style="text-align:center; font-size: 24px;">Providing high-quality water construction materials!</p>  
         </div>
         <!-- Installations Service -->
         <div class="service installations">
@@ -74,8 +79,9 @@
           </ul>
         </div>
       </div>
-      <button class="scroll-arrow right" aria-label="Scroll Right">→</button>
-    </div>
+      </div>
+  </div>
+  </div>
   </section>
 
   <script>
@@ -104,11 +110,11 @@
 <h1 style="text-align: center;">Highlights</h1>
 <section id="gallery-highlights" style="background-color: #ffffff; ">
   <div class="highlights-grid">
-    <!-- Highlight Item: BUNGRO -->
+
+       <!-- Highlight Item: BUNGRO -->
     <div class="Bungro">
       <div class="highlight-caption">BUNGRO</div>
     </div>
-    
     <!-- Highlight Item: ABOITIZ - PV SINAG -->
     <div class="ABOITIZ-PV-SINAG">
       <div class="highlight-caption">ABOITIZ - PV SINAG</div>
@@ -305,7 +311,26 @@
     <p>&copy; 2013 JASHV Construction & Supply. All rights reserved.</p>
     <p><a href="https://www.facebook.com/share/1DSYE9gdxv/" target="_blank">Facebook Page</a></p>
   </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', function () {
+      navbar.classList.toggle('show');
+      // Toggle aria-expanded for accessibility
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // Optional: Close menu when clicking outside
+    document.addEventListener('click', function (event) {
+      if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
+        navbar.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
 </body>
-
 </html>
-
