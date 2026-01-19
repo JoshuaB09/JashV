@@ -1,21 +1,18 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 body {
   font-family: 'Arial', sans-serif;
-  color: #333; /* offset for fixed header */
+  margin: 0;
+  padding: 0;
+  color: #333;
   background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
   background-image: url('https://www.transparenttextures.com/patterns/cloth-alike.png');
   background-repeat: repeat;
 }
 
+/* Links */
 a {
   text-decoration: none;
   color: inherit;
 }
-
 a:focus {
   outline: 3px dashed #3498db;
   outline-offset: 4px;
@@ -24,13 +21,40 @@ a:focus {
 /* =========================
    Header & Navigation
    ========================= */
+  .header-top {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+}
+/* Styles for the container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/* Optional: spacing between logo and text */
+.logo {
+  max-width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  height: 10vh;          
+}
+
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgba(44, 62, 80, 0.8);
   color: #fff;
-  padding: 20px 0;
+  padding: 10px 0;
   position: fixed;
   top: 0;
   width: 100%;
@@ -39,30 +63,27 @@ header {
   text-align: center;
 }
 
-.header-top {
-  display: flex;
-  align-items: center;
+/* Hamburger toggle button */
+.menu-toggle {
+  display: none; /* Hidden on large screens */
+  font-size: 2em;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+  color: #fff;
 }
-
-.logo {
-  width: 55px;
-  height: auto;
-  margin-right: 10px;
-}
-
-header h1 {
-  margin-bottom: 8px;
-}
-
+/* Navigation menu */
 nav {
-  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
 }
-
 nav a {
-  margin: 0 15px;
+  margin: 5px 10px;
   font-weight: bold;
 }
-
 nav a:hover {
   color: #3498db;
 }
@@ -72,14 +93,12 @@ nav a:hover {
    ========================= */
 .hero {
   background: url('A.jpeg') no-repeat center/cover;
-  height: 100vh;
+  min-height: 100vh; /* ensures at least full viewport height */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
 }
-
 .hero h2 {
   font-size: 3em;
   background-color: rgba(44, 62, 80, 0.7);
@@ -87,49 +106,34 @@ nav a:hover {
   border-radius: 10px;
 }
 
-/* Define the keyframes for the fadeIn animation */
+/* Fade-in animation */
 @keyframes fadeIn {
-    from {
-        opacity: 0; /* Start with fully transparent text */
-    }
-    to {
-        opacity: 1; /* End with fully opaque text */
-    }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-
-/* Apply the animation to the text container */
 .fade-in-text {
-    /* Set the initial state (optional, but good practice) */
-    opacity: 0;
-    /* Apply the animation: name, duration, timing function, and fill mode */
-    animation: fadeIn 2s ease-in forwards;
-    
-    /* Optional: Add styling to the font */
-    font-size: 24px;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    margin-top: 50px;
-    text-align: center;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  margin-top: 50px;
+  text-align: center;
 }
 
-
-/* =========================
-   Sections
-   ========================= */
+/* Sections */
 .section {
   padding: 60px 20px;
   max-width: 1600px;
   margin: auto;
   text-align: left;
 }
-
 .sectionA {
   padding: 60px 20px;
   max-width: 1600px;
   margin: auto;
   text-align: right;
 }
-
 .section h2 {
   text-align: center;
   margin-bottom: 30px;
@@ -137,10 +141,7 @@ nav a:hover {
   font-size: 2em;
 }
 
-/* =========================
-   Cards & Store Grid
-   ========================= */
-.cards,
+/* Store Grid */
 .store-grid {
   display: flex;
   flex-wrap: wrap;
@@ -148,10 +149,7 @@ nav a:hover {
   justify-content: center;
 }
 
-/* =========================
-   Card & Product Styles
-   ========================= */
-.card,
+/* Product Cards */
 .product {
   background-color: #f4f4f4;
   border-radius: 8px;
@@ -160,43 +158,35 @@ nav a:hover {
   flex: 1 1 300px;
   max-width: 1600px;
   transition: transform 0.3s;
-  position: relative; /* for overlay positioning */
+  position: relative;
 }
-
-.card:hover,
 .product:hover {
   transform: translateY(-5px);
 }
-
-/* Product Images */
 .product img {
   width: 100%;
   height: auto;
   border-radius: 4px;
 }
 
-/* =========================
-   Gallery Highlights
-   ========================= */
+/* Gallery Highlights */
 #gallery-highlights {
   background-color: #f4f4f4;
-  padding: 50px 200px;
+  padding: 50px 20px;
   text-align: center;
-  overflow-x: auto; /* enable horizontal scrolling */
+  overflow-x: auto;
   display: flex;
   justify-content: center;
 }
-
 .gallery-grid {
   max-width: 1500px;
   display: flex;
   gap: 15px;
   padding-bottom: 20px;
 }
-
 .gallery-item {
   flex: 0 0 auto;
-  width: 350x;
+  width: 350px;
   height: 90vh;
   border-radius: 8px;
   overflow: hidden;
@@ -205,21 +195,17 @@ nav a:hover {
   background-color: #fff;
   position: relative;
 }
-
 .gallery-item img {
   width: 100%;
   height: 100vh;
   display: block;
   transition: transform 0.3s;
 }
-
 .gallery-item img:hover {
   transform: scale(1.50);
 }
 
-/* =========================
-   About & Contact Sections
-   ========================= */
+/* About & Contact */
 #client-message,
 #about {
   background-color: #fff;
@@ -227,22 +213,18 @@ nav a:hover {
   text-align: center;
 }
 
-/* =========================
-   Contact Form
-   ========================= */
+/* Contact Form */
 .contact-form {
   max-width: 600px;
   margin: auto;
   display: flex;
   flex-direction: column;
 }
-
 .contact-form label {
   margin-bottom: 8px;
   font-weight: bold;
   text-align: left;
 }
-
 .contact-form input,
 .contact-form textarea {
   margin-bottom: 20px;
@@ -252,7 +234,6 @@ nav a:hover {
   font-size: 1em;
   width: 100%;
 }
-
 .contact-form button {
   padding: 12px 20px;
   background-color: #2c3e50;
@@ -262,67 +243,101 @@ nav a:hover {
   cursor: pointer;
   font-size: 1em;
 }
-
 .contact-form button:hover {
   background-color: #34495e;
 }
 
-/* =========================
-   Organizational Chart
-   ========================= */
+/* Organizational Chart */
 #Organizational {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 50px 20px;
 }
-
 #Organizational img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
 }
 
-/* =========================
-   Footer Styles
-   ========================= */
+/* Footer Styles */
 footer {
   background-color: #2c3e50;
   color: #fff;
   padding: 20px 0;
   text-align: center;
 }
-
 footer a {
   color: #3498db;
   margin: 0 10px;
 }
 
-/* =========================
-   Responsive Styles
-   ========================= */
+/* Responsive Styles */
 @media(max-width: 768px) {
-  header h1 {
-    font-size: 2em;
+  /* Show hamburger button */
+  .menu-toggle {
+    display: block;
   }
-
+  /* Hide navigation by default, show when active */
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(44, 62, 80, 0.9);
+    width: 100%;
+    padding: 10px 0;
+  }
+  #nav-menu.show {
+    display: flex;
+  }
+  header {
+    position: fixed;
+  }
+  /* Stack header top elements */
+  .header-top {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  /* Hero text size */
   .hero h2 {
     font-size: 2em;
+    padding: 10px;
   }
-
-  /* Stack cards vertically on smaller screens */
-  .cards,
+  /* Scrollable store grid */
   .store-grid {
-    flex-direction: column;
+    overflow-x: auto;
   }
-
-  /* Adjust gallery item width for small screens */
+  /* Gallery items smaller on small screens */
   .gallery-item {
-    width: 150px;
+    width: 200px;
+    height: auto;
+  }
+  /* Highlights grid single column */
+  .highlights-grid {
+    grid-template-columns: 1fr;
   }
 
-  /* Optional: adjust padding/margins for smaller devices */
+  /* Make hero section full screen on small devices */
+  .hero {
+    height: 100vh;
+    padding: 0;
+  }
+
+  /* Make gallery items full height on small devices */
+  .gallery-item {
+    height: 100vh;
+    width: 100%;
+  }
+
+  /* Make the gallery highlights section full height if needed */
+  #gallery-highlights {
+    height: 100vh;
+  }
 }
+  /* Highlights grid single column */
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
 
 /* =========================
    Miscellaneous
@@ -433,6 +448,9 @@ html {
   background-repeat: no-repeat;
   padding: 20px;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Container for horizontal scrolling services */
@@ -441,28 +459,40 @@ html {
   gap: 10px; /* space between services */
   padding: 20px;
   scroll-behavior: smooth;
+  overflow-x: auto; /* enable horizontal scroll on small screens */
+  width: 100%;
 }
 
 /* Individual service box styles with background images */
 .service {
-  flex: 1 1 auto; /* prevent shrinking */
-  min-width: 450px;
-  height: 600px;
-  width: 1000; /* adjust as needed */
+  flex: 1 1 auto; /* allows flexibility */
+  width: 1450px; /* minimum width */
+  height: auto; /* fixed height, can be adjusted */
   padding: 20px;
   border-radius: 8px;
-  color: rgb(246, 246, 246); /* text color for contrast */
+  color: rgb(246, 246, 246); /* text color */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background-size: cover;
-  background-position: center;
+  background-position: center; /* Corrected from 'flex' to 'center' */
   background-repeat: no-repeat;
   box-shadow: 0 2px 8px rgba(78, 77, 77, 0.2);
-  position: relative;
+  position: flex;
+}
+/* Default grid layout for larger screens */
+.services-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-
+/* Switch to horizontal scrolling on small screens */
+@media(max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
 /* Specific background images for each service class */
 .construction {
   background-image: url("1.jpg"), url("2.jpg"), url("12.jpg");
@@ -524,21 +554,6 @@ html {
   }
 }
 
-/* Overlay to improve text readability on backgrounds */
-.service::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  border-radius: 8px;
-  z-index: 0; 
-}
-
-/* Make sure content is above overlay */
-.service > * {
-  position: relative;
-  z-index: 1;
-}
 h3 {
   color: rgb(234, 235, 238);
   text-shadow: 2px 2px 4px #000000; /* Horizontal, Vertical, Blur, Color */
@@ -549,7 +564,7 @@ h3 {
 }
 
 #gallery-highlights{
-  height: 1500px;
+  height: 2000px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -557,42 +572,27 @@ h3 {
   color: #fff;
 }
 .highlights-grid {
-  width: 10000px;
-  border-radius: 8px;
+  width: 1500px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
-
-.highlight-item {
-  width: 100%;
-  aspect-ratio: 3 / 2; /* Keeps the rectangle shape */
-  background-size: cover;
-  background-position: flex;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  padding: 10px;
-  color: #fff;
-  transition: transform 0.3s, box-shadow 0.3s;
+@media(max-width: 768px) {
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.highlight-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
 
 /* Overlay for text readability */
 .highlight-caption {
   background-color: rgba(0, 0, 0, 0.4);
-  width: 100%;
+  width: 96%;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-align: center;
 }
+
 
 .Bungro{
   background-image: url("24.jpg"), url("3.jpg"), url("2.jpg");
