@@ -31,7 +31,7 @@ a:focus {
 .logo-container {
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 10;
 }
 
 /* Optional: spacing between logo and text */
