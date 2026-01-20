@@ -455,7 +455,8 @@ html {
 
 /* Container for horizontal scrolling services */
 .services-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px; /* space between services */
   padding: 20px;
   scroll-behavior: smooth;
@@ -487,7 +488,7 @@ html {
 }
 
 /* Switch to horizontal scrolling on small screens */
-@media(max-width: 768px) {
+@media(max-width: 600px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
