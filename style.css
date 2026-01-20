@@ -24,14 +24,14 @@ a:focus {
   .header-top {
     flex-direction: row;
     justify-content: space-between;
-    width: 100;
-    padding: 0 10;
+    width: 100%;
+    padding: 0 10px;
 }
 /* Styles for the container */
 .logo-container {
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 10;
 }
 
 /* Optional: spacing between logo and text */
@@ -466,23 +466,26 @@ html {
 /* Individual service box styles with background images */
 .service {
   flex: 1 1 auto; /* allows flexibility */
-  width: 90%; /* minimum width */
-  height: auto; /* fixed height, can be adjusted */
+  width:97%; /* minimum width */
+  height: 650px; /* fixed height, can be adjusted */
   padding: 10px;
   border-radius: 8px;
   color: rgb(246, 246, 246); /* text color */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-size: cover;
+  background-size: contain;
   background-position: center; /* Corrected from 'flex' to 'center' */
   background-repeat: no-repeat;
   box-shadow: 0 2px 8px rgba(78, 77, 77, 0.2);
   position: flex;
+  transition: background-image 1s ease, background-position 1s ease;
 }
 /* Default grid layout for larger screens */
 .services-grid{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   align-items: center;
@@ -491,6 +494,7 @@ html {
 /* Switch to horizontal scrolling on small screens */
 @media(max-width: 768px) {
   .services-grid {
+    flex-direction: column;
     grid-template-columns: 1fr;
   }
     .service h3 {
@@ -502,7 +506,7 @@ html {
   background-image: url("1.jpg"), url("2.jpg"), url("12.jpg");
   background-position: center top, center bottom, center;
   background-repeat: repeat;
-  background-size: contain;
+  background-size: cover;
   animation: slideShow1 20s infinite ease-in-out;
 }
 
@@ -522,7 +526,7 @@ html {
   background-image: url("17.jpg"), url("18.jpg"), url("19.jpg");
   background-position: center top, center bottom, center;
   background-repeat: repeat;
-  background-size: contain;
+  background-size: cover;
   animation: slideShow2 20s infinite ease-in-out;
 }
 
@@ -542,7 +546,7 @@ html {
   background-image: url("13.jpg"), url("15.jpg"), url("16.jpg");
   background-position: center top, center bottom, center;
   background-repeat: repeat;
-  background-size: contain;
+  background-size: cover;
   animation: slideShow3 20s infinite ease-in-out;
 }
 
