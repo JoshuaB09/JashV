@@ -455,8 +455,7 @@ html {
 
 /* Container for horizontal scrolling services */
 .services-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 10px; /* space between services */
   padding: 20px;
   scroll-behavior: smooth;
@@ -468,10 +467,10 @@ html {
 .service {
   flex: 1 1 auto; /* allows flexibility */
   width:97%; /* minimum width */
-  height: 90vh; /* fixed height, can be adjusted */
+  height: auto; /* fixed height, can be adjusted */
   padding: 20px;
   border-radius: 8px;
-  color: rgb(246, 246, 246); /* text color */
+  color: rgb(255, 255, 255); /* text color */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -480,16 +479,19 @@ html {
   background-repeat: no-repeat;
   box-shadow: 0 2px 8px rgba(78, 77, 77, 0.2);
   position: flex;
-  transition: background-image 1s ease, background-position 1s ease;
+  grid-template-columns: repeat(3, 1fr);
 }
 /* Default grid layout for larger screens */
 .services-grid{
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
 }
 
 /* Switch to horizontal scrolling on small screens */
-@media(max-width: 600px) {
-  .services-grid {
+@media(max-width: 768px) {
+  .service {
     grid-template-columns: 1fr;
   }
 }
