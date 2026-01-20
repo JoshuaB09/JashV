@@ -24,14 +24,14 @@ a:focus {
   .header-top {
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    padding: 0 10px;
+    width: 100;
+    padding: 0 10;
 }
 /* Styles for the container */
 .logo-container {
   display: flex;
   align-items: center;
-  margin-right: 10;
+  margin-right: 10px;
 }
 
 /* Optional: spacing between logo and text */
