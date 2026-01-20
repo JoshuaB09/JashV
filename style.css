@@ -172,25 +172,25 @@ nav a:hover {
 /* Gallery Highlights */
 #gallery-highlights {
   background-color: #f4f4f4;
-  padding: 50px 20px;
+  padding: 50 20;
   text-align: center;
   overflow-x: auto;
   display: flex;
   justify-content: center;
 }
 .gallery-grid {
-  max-width: 1500px;
+  max-width: 1500;
   display: flex;
-  gap: 15px;
-  padding-bottom: 20px;
+  gap: 15;
+  padding-bottom: 20;
 }
 .gallery-item {
   flex: 0 0 auto;
-  width: 350px;
-  height: 90vh;
-  border-radius: 8px;
+  width: 350;
+  height: 90;
+  border-radius: 8;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2 8 (0,0,0,0.1);
   transition: transform 0.3s;
   background-color: #fff;
   position: relative;
@@ -209,7 +209,7 @@ nav a:hover {
 #client-message,
 #about {
   background-color: #fff;
-  padding: 50px 20px;
+  padding: 50 20;
   text-align: center;
 }
 
@@ -466,18 +466,18 @@ html {
 /* Individual service box styles with background images */
 .service {
   flex: 1 1 auto; /* allows flexibility */
-  width:97%; /* minimum width */
-  height: 650px; /* fixed height, can be adjusted */
-  padding: 10px;
-  border-radius: 8px;
-  color: rgb(246, 246, 246); /* text color */
+  width:97; /* minimum width */
+  height: 650; /* fixed height, can be adjusted */
+  padding: 10;
+  border-radius: 8;
+  color: (246, 246, 246); /* text color */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background-size: contain;
   background-position: center; /* Corrected from 'flex' to 'center' */
   background-repeat: no-repeat;
-  box-shadow: 0 2px 8px rgba(78, 77, 77, 0.2);
+  box-shadow: 0 2 8 (78, 77, 77, 0.2);
   position: flex;
   transition: background-image 1s ease, background-position 1s ease;
 }
@@ -486,8 +486,8 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: (3, 1fr);
+  gap: 20;
   align-items: center;
 }
 
@@ -841,6 +841,7 @@ h3 {
     background-image: url("62.jpg"), url("63.jpg"), url("61.jpg");
   }
 }
+
 
 
 
