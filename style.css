@@ -151,7 +151,7 @@ nav a:hover {
 
 /* Product Cards */
 .product {
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 20px;
@@ -366,7 +366,7 @@ html {
 }
 
 .tablink {
-  background: #eee;
+  background: #ffffff;
   border: none;
   padding: 10px 20px;
   margin: 0 5px;
@@ -384,7 +384,7 @@ html {
 .tabcontent {
   display: none;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-top: none;
   border-radius: 0 4px 4px 4px;
 }
@@ -447,7 +447,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   padding: 20px;
-  color: #fff;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -477,7 +477,6 @@ html {
   background-size: cover;
   background-position: center; /* Corrected from 'flex' to 'center' */
   background-repeat: no-repeat;
-  box-shadow: 0 2px 8px rgba(78, 77, 77, 0.2);
   position: flex;
   grid-template-columns: repeat(3, 1fr);
 }
