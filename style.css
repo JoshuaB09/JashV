@@ -93,6 +93,13 @@ nav a:hover {
   justify-content: center;
   text-align: center;
 }
+
+@media(max-width: 768px) {
+  /* Make navigation menu stack vertically */
+  nav {
+    flex-direction: column;
+  }
+}
 .hero h2 {
   font-size: 3em;
   background-color: rgba(44, 62, 80, 0.7);
@@ -134,6 +141,8 @@ nav a:hover {
 }
 
 .store-grid {
+  align-items: center;
+  flex-direction: column;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -394,6 +403,7 @@ html {
 .service {
   flex: 1 1 auto;
   width:97%; 
+  min-height: 300px;
   height: 650px;
   padding: 20px;
   border-radius: 8px;
@@ -419,6 +429,11 @@ html {
     grid-template-columns: 1fr;
   }
 }
+  .construction,
+  .materials,
+  .installations {
+    background-position: center;
+  }
 
 .construction {
   background-image: url("1.jpg"), url("2.jpg"), url("12.jpg");
