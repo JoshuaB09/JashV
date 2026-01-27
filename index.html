@@ -51,6 +51,7 @@
       <div class="services-container" id="services-container">
         <!-- Construction Service -->
         <div class="service construction">
+          <div class="service clickable" data-service="construction">
           <h3 style="text-align:center; font-size: 2rem;">Construction</h3>
           <ul>
             <li class="shadow-effect" style="font-size: 24px;"> Building Construction</li>
@@ -63,15 +64,20 @@
             <li class="shadow-effect" style="font-size: 24px;"> Water System</li>
             <li class="shadow-effect" style="font-size: 24px;"> Water Drilling</li>
           </ul>
+          </div>
         </div>
         <!-- Supply of Materials Service -->
         <div class="service materials">
+          <div class="service clickable" data-service="materials">
           <h3 style="text-align:center; font-size: 2rem;">Supply of Materials</h3>
           <p class="shadow-effect" style="text-align:center; font-size: 24px;">Providing high-quality water construction materials!</p>  
         </div>
+        </div>
         <!-- Installations Service -->
         <div class="service installations">
+          <div class="service clickable" data-service="installations">
           <h3 style="text-align:center; font-size: 2rem;">Installations</h3>
+          
           <ul>
             <li class="shadow-effect" style="font-size: 24px;">Electrical & Electro Mechanical Supplies</li>
             <li class="shadow-effect" style="font-size: 24px;">Electrical Installations & Audits</li>
@@ -171,110 +177,67 @@
     </div>
   </div>
 </section>
-  <script>
-    // Data for store, equipment, and highlights
-    const storeImages = [
-      {
-        src: 'P.png',
-        title: 'Power Tools',
-        description: 'High-quality Power tools for all your construction needs.'
-      },
-      {
-        src: 'PF.jpg',
-        title: 'PPR Pipes & Fittings',
-        description: 'PPR pipes are widely used for hot and cold water supply systems.'
-      },
-      {
-        src: 'PS.png',
-        title: 'Pump Specialist',
-        description: 'Use of specific materials for pump construction based on application.'
-      }
-    ];
+<script>
+  // Data for store, equipment, and highlights
+  const storeImages = [
+    {
+      src: 'P.png',
+      title: 'Power Tools',
+      description: 'High-quality Power tools for all your construction needs.'
+    },
+    {
+      src: 'PF.jpg',
+      title: 'PPR Pipes & Fittings',
+      description: 'PPR pipes are widely used for hot and cold water supply systems.'
+    },
+    {
+      src: 'PS.png',
+      title: 'Pump Specialist',
+      description: 'Use of specific materials for pump construction based on application.'
+    }
+  ];
 
-    const equipmentImages = [
-      {
-        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/SNR600.jpg',
-        title: 'Water Well Drilling Machines',
-        description: 'Rig Model FY-350EE with advanced features for efficient drilling.'
-      },
-      {
-        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/A.jpg',
-        title: 'Air Compressor',
-        description: '900 CFM / 425 Psi Cat Engine Ingersoll Rand.'
-      },
-      {
-        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/p.jpg',
-        title: 'Mud & Grouting Pumps',
-        description: 'High capacity pumps with various specifications for different needs.'
-      },
-      {
-        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/megapowe-24-60kw.jpg',
-        title: 'Generator Set',
-        description: 'Diesel generator with 25KVA, soundproof, 3-phase, Yanmar engine.'
-      },
-      {
-        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/e.jpg',
-        title: 'Excavator',
-        description: 'Models include Hitachi EX60, Kobelco Beetle, 30SR, EX27.'
-      }
-    ];
 
-    const highlightImages = [
-      {
-        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/power%20tools.png',
-        title: 'Power Tools',
-        description: 'High-quality Power tools for all your construction needs.'
-      },
-      {
-        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/pipes.jpg',
-        title: 'PPR Pipes & Fittings',
-        description: 'PPR pipes are widely used for hot and cold water supply systems.'
-      },
-      {
-        src: 'https://uploads.onecompiler.io/446huvdst/446nfhkg7/Pump.png',
-        title: 'Pump Specialist',
-        description: 'Use of specific materials for pump construction based on application.'
-      }
-    ];
 
-    // Populate sections after DOM loads
-    document.addEventListener('DOMContentLoaded', () => {
-      function populateSection(sectionId, images, isStoreOrEquip = true) {
-        const section = document.getElementById(sectionId);
-        if (!section) return;
-        const container = section.querySelector('.store-grid') || section.querySelector('.gallery-grid');
-        if (!container) return;
+  // Populate sections after DOM loads
+  document.addEventListener('DOMContentLoaded', () => {
+    function populateSection(sectionId, images, isStoreOrEquip = true) {
+      const section = document.getElementById(sectionId);
+      if (!section) return;
+      const container = section.querySelector('.store-grid') || section.querySelector('.gallery-grid');
+      if (!container) return;
 
-        images.forEach((img, index) => {
-          const div = document.createElement('div');
-          div.className = isStoreOrEquip ? 'product' : 'gallery-item';
+      images.forEach((img, index) => {
+        const div = document.createElement('div');
+        div.className = isStoreOrEquip ? 'product' : 'gallery-item';
 
-          const image = document.createElement('img');
-          image.src = img.src;
-          image.alt = img.title || `Image ${index + 1}`;
+        const image = document.createElement('img');
+        image.src = img.src;
+        image.alt = img.title || `Image ${index + 1}`;
 
-          if (isStoreOrEquip) {
-            const captionTitle = document.createElement('h4');
-            captionTitle.textContent = img.title;
-            const captionDesc = document.createElement('p');
-            captionDesc.textContent = img.description;
-            div.appendChild(image);
-            div.appendChild(captionTitle);
-            div.appendChild(captionDesc);
-          } else {
-            div.appendChild(image);
-          }
+        div.appendChild(image);
 
-          container.appendChild(div);
-        });
-      }
+        if (isStoreOrEquip) {
+          const captionTitle = document.createElement('h4');
+          captionTitle.textContent = img.title;
+          const captionDesc = document.createElement('p');
+          captionDesc.textContent = img.description;
+          div.appendChild(captionTitle);
+          div.appendChild(captionDesc);
+        } else {
+          // For highlights, just show the image
+        }
 
-      // Call populate for each section
-      populateSection('store', storeImages, true);
-      populateSection('major-equipments', equipmentImages, true);
-      populateSection('gallery-highlights', highlightImages, false);
-    });
-  </script>
+        container.appendChild(div);
+      });
+    }
+
+    // Call populate for each section
+    populateSection('store', storeImages, true);
+    populateSection('major-equipments', equipmentImages, true);
+    populateSection('gallery-highlights', highlightImages, false);
+  });
+</script>
 
   <!-- About Us Section -->
   <section class="sectionA" id="about">
@@ -295,7 +258,7 @@
   <!-- Organizational Chart -->
   <section style="text-align:center; padding:50px 20px;">
     <h1>Organizational Chart</h1>
-    <img src="O.png" alt="Organizational Chart" style="max-width:100%; height:auto; border-radius:8px;" />
+    <img src="JASHV.png" alt="Organizational Chart" style="max-width:100%; height:auto; border-radius:8px;" />
   </section>
 
   <!-- Contact Us -->
