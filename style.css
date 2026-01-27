@@ -8,7 +8,6 @@ body {
   background-repeat: repeat;
 }
 
-/* Links */
 a {
   text-decoration: none;
   color: inherit;
@@ -18,23 +17,19 @@ a:focus {
   outline-offset: 4px;
 }
 
-/* =========================
-   Header & Navigation
-   ========================= */
   .header-top {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     padding: 0 10px;
 }
-/* Styles for the container */
+
 .logo-container {
   display: flex;
   align-items: center;
   margin-right: 10px;
 }
 
-/* Optional: spacing between logo and text */
 .logo {
   max-width: 50px;
   height: auto;
@@ -63,16 +58,15 @@ header {
   text-align: center;
 }
 
-/* Hamburger toggle button */
 .menu-toggle {
-  display: none; /* Hidden on large screens */
+  display: none; 
   font-size: 2em;
   cursor: pointer;
   padding: 10px;
   user-select: none;
   color: #fff;
 }
-/* Navigation menu */
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -88,12 +82,12 @@ nav a:hover {
   color: #3498db;
 }
 
-/* =========================
-   Hero Section
-   ========================= */
 .hero {
-  background: url('A.jpeg') no-repeat center/cover;
-  min-height: 100vh; /* ensures at least full viewport height */
+  background-image: url("E.jpg");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center, top right, bottom left;
+  background-size: cover, contain, auto;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,7 +100,6 @@ nav a:hover {
   border-radius: 10px;
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -114,14 +107,13 @@ nav a:hover {
 .fade-in-text {
   opacity: 0;
   animation: fadeIn 2s ease-in forwards;
-  font-size: 24px;
+  font-size: 15px;
   font-family: Arial, sans-serif;
   color: #ffffff;
   margin-top: 50px;
   text-align: center;
 }
 
-/* Sections */
 .section {
   padding: 60px 20px;
   max-width: 1600px;
@@ -141,7 +133,6 @@ nav a:hover {
   font-size: 2em;
 }
 
-/* Store Grid */
 .store-grid {
   display: flex;
   flex-wrap: wrap;
@@ -149,7 +140,6 @@ nav a:hover {
   justify-content: center;
 }
 
-/* Product Cards */
 .product {
   background-color: #ffffff;
   border-radius: 8px;
@@ -169,7 +159,6 @@ nav a:hover {
   border-radius: 4px;
 }
 
-/* Gallery Highlights */
 #gallery-highlights {
   background-color: #f4f4f4;
   padding: 50px 20px;
@@ -205,49 +194,12 @@ nav a:hover {
   transform: scale(1.50);
 }
 
-/* About & Contact */
-#client-message,
 #about {
   background-color: #fff;
   padding: 50px 20px;
   text-align: center;
 }
 
-/* Contact Form */
-.contact-form {
-  max-width: 600px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-.contact-form label {
-  margin-bottom: 8px;
-  font-weight: bold;
-  text-align: left;
-}
-.contact-form input,
-.contact-form textarea {
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1em;
-  width: 100%;
-}
-.contact-form button {
-  padding: 12px 20px;
-  background-color: #2c3e50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1em;
-}
-.contact-form button:hover {
-  background-color: #34495e;
-}
-
-/* Organizational Chart */
 #Organizational {
   display: flex;
   justify-content: center;
@@ -259,7 +211,6 @@ nav a:hover {
   height: auto;
 }
 
-/* Footer Styles */
 footer {
   background-color: #2c3e50;
   color: #fff;
@@ -271,13 +222,10 @@ footer a {
   margin: 0 10px;
 }
 
-/* Responsive Styles */
 @media(max-width: 768px) {
-  /* Show hamburger button */
   .menu-toggle {
     display: block;
   }
-  /* Hide navigation by default, show when active */
   #nav-menu {
     display: none;
     flex-direction: column;
@@ -292,62 +240,49 @@ footer a {
   header {
     position: fixed;
   }
-  /* Stack header top elements */
   .header-top {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
   }
-  /* Hero text size */
   .hero h2 {
     font-size: 2em;
     padding: 10px;
   }
-  /* Scrollable store grid */
   .store-grid {
     overflow-x: auto;
   }
-  /* Gallery items smaller on small screens */
   .gallery-item {
     width: 200px;
     height: auto;
   }
-  /* Highlights grid single column */
+
   .highlights-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Make hero section full screen on small devices */
   .hero {
     height: 100vh;
     padding: 0;
   }
 
-  /* Make gallery items full height on small devices */
   .gallery-item {
     height: 100vh;
     width: 100%;
   }
 
-  /* Make the gallery highlights section full height if needed */
   #gallery-highlights {
     height: 100vh;
   }
 }
-  /* Highlights grid single column */
   .highlights-grid {
     grid-template-columns: 1fr;
   }
 
-/* =========================
-   Miscellaneous
-   ========================= */
-/* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
 }
 
-/* Fade-in animation for scroll effects */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -358,7 +293,6 @@ html {
   transform: translateY(0);
 }
 
-/* Tabs styling */
 .tabs {
   display: flex;
   justify-content: center;
@@ -393,7 +327,6 @@ html {
   display: block;
 }
 
-/* Authentication Forms */
 .auth-container {
   background: #f4f4f4;
   padding: 20px;
@@ -439,9 +372,6 @@ html {
   text-decoration: underline;
 }
 
-/* =========================
-   Service Section with Backgrounds
-   ========================= */
 #services {
   background-size: cover;
   background-position: center;
@@ -453,34 +383,30 @@ html {
   align-items: center;
 }
 
-/* Container for horizontal scrolling services */
 .services-container {
   display: flex;
-  gap: 10px; /* space between services */
+  gap: 10px;
   padding: 20px;
   scroll-behavior: smooth;
-  overflow-x: auto; /* enable horizontal scroll on small screens */
+  overflow-x: auto; 
   width: 100%;
 }
-
-/* Individual service box styles with background images */
 .service {
-  flex: 1 1 auto; /* allows flexibility */
-  width:97%; /* minimum width */
-  height: auto; /* fixed height, can be adjusted */
+  flex: 1 1 auto;
+  width:97%; 
+  height: 650px;
   padding: 20px;
   border-radius: 8px;
-  color: rgb(255, 255, 255); /* text color */
+  color: rgb(255, 255, 255); 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background-size: cover;
-  background-position: center; /* Corrected from 'flex' to 'center' */
+  background-position: center;
   background-repeat: no-repeat;
   position: flex;
   grid-template-columns: repeat(3, 1fr);
 }
-/* Default grid layout for larger screens */
 .services-grid{
   display: flex;
   justify-content: center;
@@ -488,13 +414,12 @@ html {
   align-items: center;
 }
 
-/* Switch to horizontal scrolling on small screens */
 @media(max-width: 768px) {
   .service {
     grid-template-columns: 1fr;
   }
 }
-/* Specific background images for each service class */
+
 .construction {
   background-image: url("1.jpg"), url("2.jpg"), url("12.jpg");
   background-position: center top, center bottom, center;
@@ -557,7 +482,7 @@ html {
 
 h3 {
   color: rgb(234, 235, 238);
-  text-shadow: 2px 2px 4px #000000; /* Horizontal, Vertical, Blur, Color */
+  text-shadow: 2px 2px 4px #000000;
 }
 .shadow-effect {
   text-shadow: 1px 1px 2px black;
@@ -584,8 +509,6 @@ h3 {
   }
 }
 
-
-/* Overlay for text readability */
 .highlight-caption {
   background-color: rgba(0, 0, 0, 0.4);
   width: 96%;
